@@ -1,0 +1,235 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', 'Poppins',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: 'Poppins', sans-serif,
+    monospace;
+}
+
+#root {
+  width: 100%;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62, 5%;
+}
+
+body {
+  height: 100vh;
+  margin: 0;
+  font-size: 1.4rem;
+  font-family: 'Poppins', sans-serif;
+  -webkit-user-select: none;
+  /* user-select -- это нестандартное свойство */
+
+  -moz-user-select: none;
+  /* поэтому нужны префиксы */
+
+  -ms-user-select: none;
+}
+
+a {
+  text-decoration: none;
+  color:white
+}
+
+/* Layout */
+
+.grid-container {
+  display: grid;
+  grid-template-areas: 'header' 'main' 'footer';
+  grid-template-columns: 1fr;
+  grid-template-rows: 5rem 1fr 5rem;
+  height: 100%;
+  background-color: #1d2026;
+  color: white;
+  transition: color 0.5s, background-color 0.5s;
+  -webkit-transition: color 0.5s, background-color 0.5s;
+  -moz-transition: color 0.5s, background-color 0.5s;
+  -ms-transition: color 0.5s, background-color 0.5s;
+  -o-transition: color 0.5s, background-color 0.5s;
+}
+
+header {
+  grid-area: header;
+}
+
+main {
+  grid-area: main;
+  padding: 1rem;
+}
+
+footer {
+  grid-area: footer;
+  background-color: #00986f;
+}
+
+/*Common*/
+
+a {
+  text-decoration: none;
+  color: white;
+  transition: color 0.5s;
+  -webkit-transition: color 0.5s;
+  -moz-transition: color 0.5s;
+  -ms-transition: color 0.5s;
+  -o-transition: color 0.5s;
+}
+
+header a:first-child {
+  padding-right: 1.3rem;
+}
+
+/*Header*/
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 2rem 3rem 2rem 3rem;
+}
+
+.badge {
+  background-color: #00986f;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  margin-left: 0.4rem;
+  padding: 0.1rem 0.7rem
+}
+
+.Logo {
+  color: white;
+  font-weight: bold;
+  font-size: 2rem;
+}
+
+.anymoreInHeader {
+  display: flex;
+}
+
+/*Footer*/
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.footer .top {
+  align-items: flex-start;
+}
+
+/*Image*/
+
+img.medium {
+  max-width: 260px;
+  max-height: 250px;
+  width: 100%;
+  border-radius: .5rem .5rem 0 0;
+  -webkit-border-radius: .5rem .5rem 0 0;
+  -moz-border-radius: .5rem .5rem 0 0;
+  -ms-border-radius: .5rem .5rem 0 0;
+  -o-border-radius: .5rem .5rem 0 0;
+}
+
+/*Cards*/
+.card {
+  height: 360px;
+  width: 260px;
+  background-color: #00986f;
+  border-radius: 0.5rem;
+  -webkit-border-radius: 0.5rem;
+  -moz-border-radius: 0.5rem;
+  -ms-border-radius: 0.5rem;
+  -o-border-radius: 0.5rem;
+  margin: 1rem;
+}
+
+.card-body {
+  padding: 0rem 1rem 1rem 1rem;
+}
+
+.card-image {
+  height: 384px;
+}
+
+.card-name {
+  font-size: 1.2rem;
+  margin: 0;
+}
+
+.price {
+
+  font-size: 1.2rem;
+}
+
+/*Rating*/
+
+.rating {
+  display: flex;
+}
+
+.rating div span {
+  margin: 2px;
+}
+
+
+.rating>span {
+  display: flex;
+  align-items: center;
+  color: #404040;
+  margin-left: 5%;
+  font-size: 1rem;
+}
+
+.active-those {
+  background-color: rgb(243, 243, 243);
+  color: #1d2026;
+}
+
+.active-those a {
+  color: #1d2026;
+}
+
+/* Alert */
+.success {
+  color: green;
+}
+
+.error {
+  color: #a02020
+}
+
+.alert {
+  padding: 1rem;
+  border: 0.1rem solid transparent;
+  border: 0.5rem;
+  height: 100vh;
+}
+
+.alert-info {
+  color: #1d2026;
+  background-color: #e0e0ff;
+}
+
+.alert-error {
+  color: #a02020;
+  background-color: #ffe0e0e0;
+}
+
+/* Loading-card */
+
+.loading-card {
+  margin: 1rem;
+}
