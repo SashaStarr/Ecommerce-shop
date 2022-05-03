@@ -17,7 +17,7 @@ const MainPage = ({ theme }) => {
             <div className="main-text_container">
                 <h1>Lamps</h1>
                 <p>Desc</p>
-                <Link to='/catalog'>Catalog</Link>
+                <Link to='/catalog' className='shadow'>Catalog</Link>
             </div>
         </section>
     )

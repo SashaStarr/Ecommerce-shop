@@ -7,7 +7,10 @@ import {
 } from "./CatalogSlice"
 import { useEffect } from 'react';
 import Card from './card/Card';
-import './Catalog.scss'
+import './Catalog.scss';
+import Loading from '../../other/Loading';
+import Alert from '../../other/Error'
+
 
 const Catalog = () => {
     //getItems
@@ -23,24 +26,25 @@ const Catalog = () => {
     }, []);
     const itemsLoadingStatus = useSelector(state => state.items.itemsLoadingStatus);
     const items = useSelector(state => state.items.items.catalog);
-    console.log(Array.isArray(items))
     const dispatch = useDispatch();
+    console.log(items)
+
+
 
 
     //error & loading
     if (itemsLoadingStatus === "loading") {
-        return <div>Loading...</div>;
+        return <Loading />;
     } else if (itemsLoadingStatus === "error") {
-        return <h5>Error</h5>
+        return <Alert />
+    } else {
+        return (<div className="catalog">
+            {items ? (
+                items.map(({ id, ...props }) => <Card key={id} {...props}></Card>)
+            ) : (<Loading />)}
+        </div>
+        )
     }
-
-
-
-    return (
-        items.map(({ id, ...props }) => {
-            <Card key={id} {...props}></Card>
-        })
-    )
 }
 
 export default Catalog
