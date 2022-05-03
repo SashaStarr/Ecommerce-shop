@@ -5,35 +5,41 @@ import {
     itemsFetched,
     itemsFetchingError,
 } from "./CatalogSlice"
-import { useEffect, useCallback } from 'react';
+import { useEffect } from 'react';
+import Card from './card/Card';
+import './Catalog.scss'
 
 const Catalog = () => {
-
     //getItems
+    const { request } = useHttp();
     const fetchItems = (request) => (dispatch) => {
         dispatch(itemsFetching());
         request("http://localhost:3001/MyBd")
             .then(data => dispatch(itemsFetched(data)))
             .catch(() => dispatch(itemsFetchingError()))
     }
-    const itemsLoadingStatus = useSelector(state => state.items.itemsLoadingStatus);
-    const items = useSelector(state => state.items.items);
-    console.log(items)
-    const dispatch = useDispatch();
-    const { request } = useHttp();
-
     useEffect(() => {
         dispatch(fetchItems(request));
     }, []);
+    const itemsLoadingStatus = useSelector(state => state.items.itemsLoadingStatus);
+    const items = useSelector(state => state.items.items.catalog);
+    console.log(Array.isArray(items))
+    const dispatch = useDispatch();
 
+
+    //error & loading
     if (itemsLoadingStatus === "loading") {
         return <div>Loading...</div>;
     } else if (itemsLoadingStatus === "error") {
         return <h5>Error</h5>
     }
 
+
+
     return (
-        <div>Hi</div>
+        items.map(({ id, ...props }) => {
+            <Card key={id} {...props}></Card>
+        })
     )
 }
 
