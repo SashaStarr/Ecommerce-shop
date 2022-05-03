@@ -6,6 +6,7 @@ import {
 } from 'react-router-dom';
 import MainPage from './components/screens/mainPage/MainPage';
 import Header from './components/header/Header'
+import Catalog from './components/screens/catalog/Catalog';
 
 function App() {
   //Theme
@@ -27,6 +28,7 @@ function App() {
         <Header swapTheme={swapTheme} theme={theme}></Header>
         <main>
           <Routes>
+            <Route path='catalog' element={<Catalog />} />
             <Route path="/" element={<MainPage theme={theme} />} />
           </Routes>
         </main>

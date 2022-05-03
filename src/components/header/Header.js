@@ -1,13 +1,12 @@
 import { Link } from 'react-router-dom';
 import './Header.scss';
-import { useState } from 'react'
 
 const Header = ({ swapTheme, theme }) => {
     //Theme
     const buttonLight = theme ? 'button-light' : 'button-light active';
     return (
         <header>
-            <div className='Logo'><Link to="/">Ostapeje</Link></div>
+            <div className='Logo'><Link to="/">Ecommerce</Link></div>
             <div className="anymoreInHeader">
                 <div className="optionInSite">
                     <Link to="cart.html">Cart</Link></div>
